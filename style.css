@@ -1,88 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Space+Grotesk:wght@400..700&display=swap');
 
 * {
     box-sizing: border-box;
 }
+
+body,
+h1,
+h2,
+h3,
+p,
+section,
+article,
+figure {
+    margin: 0;
+}
+
 html {
     scroll-behavior: smooth;
     min-height: 100vh;
-    background: linear-gradient(#130c23, #050d43);
+    background:
+        radial-gradient(circle at top, rgba(255, 169, 77, 0.18), transparent 32%),
+        linear-gradient(180deg, #151326 0%, #09142f 100%);
 }
+
 body {
-    font-family: 'Inter', sans-serif;
-    color: #e0e0e0;
-    padding: 5vh 5vw 10vh;
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    color: #edf1f7;
+    padding: 5vh 5vw;
     line-height: 1.6;
+}
+
+.hero,
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    width: min(100%, 760px);
+    min-height: 100vh;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+main {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    gap: 2rem;
+    padding-bottom: 5rem;
 }
 
 figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 }
+
 picture {
     display: contents;
 }
+
 img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    box-shadow: -10px 10px 30px #0a0613;
-    margin-bottom: 26px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: -16px 20px 48px rgba(4, 10, 24, 0.48);
 }
 
 h1 {
-    font-size: 48px;
-    font-weight: 400;
-    margin-top: 20px;
-    margin-bottom: 24px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.7rem, 6vw, 4.4rem);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
     text-align: center;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
     text-wrap: balance;
 }
 
 h1 strong {
-    font-weight: 400;
+    font-weight: 600;
     color: #ffffff;
 }
 
-p.subtitle {
-    font-size: 22px;
-    font-weight: 300;
-    color: #c9c7c7;
+.hero-title {
+    max-width: 11ch;
+}
+
+.subtitle {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 400;
+    color: #cad4e2;
     text-align: center;
     line-height: 1.5;
-    max-width: 600px;
-    margin: 0 auto 40px;
     text-wrap: balance;
-}
-footer {
-    text-align: center;
-    margin-top: auto;
-    width: 100%;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background-color: #6f1c85;
+    background: linear-gradient(135deg, #ff8a4c, #ff5c75);
     color: #ffffff;
     padding: 14px 32px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 18px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    letter-spacing: 0.01em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 106, 92, 0.28);
 }
 
 .btn i {
@@ -91,43 +126,150 @@ footer {
 }
 
 .btn:hover {
-    background-color: #9d4edd;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(157, 78, 221, 0.6);
+    box-shadow: 0 16px 36px rgba(255, 106, 92, 0.38);
+    filter: brightness(1.05);
     color: #ffffff;
 }
 
+.section {
+    width: 100%;
+    padding: 1.25rem 0;
+}
 
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.5rem;
+    color: #ffb38e;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    text-wrap: balance;
+}
+
+.card-grid,
+.audience-grid,
+.stats-grid {
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+}
+
+.card-grid,
+.stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.audience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card,
+.audience-card,
+.stat-card,
+.experience-note {
+    padding: 1.4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 18px 50px rgba(4, 10, 24, 0.16);
+    backdrop-filter: blur(8px);
+}
+
+.card h3,
+.audience-card h3 {
+    margin-bottom: 0.55rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.18rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.card p,
+.audience-card p,
+.stat-card p,
+.experience-note p {
+    color: #cad4e2;
+}
+
+.stat-card strong {
+    display: block;
+    margin-bottom: 0.55rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.55rem;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.experience-note {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    .card-grid,
+    .audience-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media screen and (max-width: 500px) {
+    body {
+        padding: 32px 20px 40px;
+    }
+
+    .hero {
+        min-height: auto;
+        justify-content: flex-start;
+        padding-bottom: 2rem;
+    }
+
     figure {
-        margin: 0;
+        margin-bottom: 1.5rem;
         width: 100%;
         align-items: flex-start;
     }
-    figcaption {
-        text-align: left;
-        line-height: 24px;
-    }
-    figcaption br {
-        display: block;
-    }
+
     img {
         width: 200px;
         height: 200px;
     }
-    h1 {
-        font-size: 36px;
+
+    h1,
+    .subtitle,
+    .section h2 {
         text-align: left;
     }
+
     h1 br {
         display: none;
     }
-    p.subtitle {
-        font-size: 18px;
-        text-align: left;
+
+    .section {
+        padding: 0.75rem 0;
     }
-    footer {
-        text-align: left;
+
+    .section-heading {
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
     }
 }

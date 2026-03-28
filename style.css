@@ -113,7 +113,6 @@ footer {
     figure {
         margin: 0;
         width: 100%;
-        align-items: flex-start;
     }
     figcaption {
         text-align: left;
@@ -132,6 +131,9 @@ footer {
     }
     h1 br {
         display: none;
+    }
+    h2 {
+        margin-bottom: 44px;
     }
     p.subtitle {
         font-size: 18px;

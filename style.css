@@ -101,6 +101,26 @@ section.cta {
     width: 100%;
 }
 
+.socials {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    column-gap: 18px;
+}
+/* Social buttons shadow style */
+.socials .btn {
+    border: 2px solid #6f1c85; 
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.socials .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    background: rgba(111, 28, 133, 0.5);
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
